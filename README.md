@@ -1,2 +1,2 @@
-# springboot-rest-jwt
-Repositorio de la Formación en Openwebinars.net: Implementa una API REST segura con Spring Boot y JWT
+# Examen sobre el proyecto interdisciplinar 1 23-24 - Tipo A
+Repositorio del Examen Tipo A
