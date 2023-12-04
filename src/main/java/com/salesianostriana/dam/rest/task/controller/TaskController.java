@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,9 @@ public class TaskController {
     private final TaskRepository taskRepository;
 
     @GetMapping("/")
-    public ResponseEntity<List<Task>> getAll() {
+    public ResponseEntity<List<Task>> getAll(Pageable pageable) {
+        pageable.getPageFormat(0);
+
         List<Task> result = taskRepository.findAll();
         if (result.isEmpty()) {
             // Completar
@@ -41,10 +44,11 @@ public class TaskController {
 
     }
 
-    @GetMapping("/dto")
+   /* @GetMapping("/dto")
     public ResponseEntity<List<GetTaskDto>> getAllDto() {
-        return null; // Modificar
-    }
+        List<GetTaskDto> getTaskDtos= taskRepository.listTask();
+        return ResponseEntity.ok(getTaskDtos);
+    }*/
 
 
 }
